@@ -3,13 +3,18 @@
 <head> 
 </head> 
 <body> 
+    <?php 
+        include 'templates/header.php';    
+    ?> 
+
     <nav> 
-    <div class="wrapper"> 
-    <ul>
-    <li><a href="signup.php">Sign Up</a></li> 
-    <li><a href="login.php">Login</a></li> 
-    </ul> 
-    </div> 
+        <div class="wrapper"> 
+            <ul>
+                <li><a href="games.php">Games</a></li> 
+                <li><a href="signup.php">Sign Up</a></li> 
+                <li><a href="login.php">Login</a></li> 
+            </ul> 
+        </div> 
     </nav> 
 
 </body> 

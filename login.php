@@ -16,10 +16,8 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
    
 
     <form action="signup.inc.php" method="POST"> 
-        <input type="text" name="user_name" placeholder="username"> <br> 
-        <input type="text" name="user_email" placeholder="email"> <br> 
+        <input type="text" name="name" placeholder="username/email"> <br> 
         <input type="password" name="user_pwd" placeholder="password"> <br> 
-        <input type="password" name="user_pwdrepeat" placeholder="confirm password"> <br> 
         <button type="submit" name="submit" class="btn btn-primary">Sign Up</button> 
     </form> 
     <?php 
@@ -34,7 +32,6 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
 
 <?php include 'templates/footer.php'?> 
 </html> 
-
 
 
 
