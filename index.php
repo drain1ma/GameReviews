@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
 <html> 
-    <?php include_once 'connection.php' ?>
+    <?php include_once 'connection.inc.php' ?>
 <head> 
     
 </head> 
@@ -15,10 +15,10 @@
     </nav> 
 
 
-    <form action="signup.inc.php" method="post"> 
-    <input type="text" name="username" placeholder="username"> <br> 
-    <input type="text" name="email" placeholder="email"> <br> 
-    <input type="password" name="password" placeholder="password"> <br> 
+    <form action="signup.inc.php" method="POST"> 
+    <input type="text" name="user_name" placeholder="username"> <br> 
+    <input type="text" name="user_email" placeholder="email"> <br> 
+    <input type="password" name="user_pwd" placeholder="password"> <br> 
     <button type="submit" name="submit" class="btn btn-primary">Sign Up</button> 
     </form> 
     <?php 
