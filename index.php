@@ -4,7 +4,8 @@
 </head> 
 <body> 
     <?php 
-        include 'templates/header.php';    
+        session_start();  
+        include 'templates/header.php'; 
     ?> 
 
     <nav> 

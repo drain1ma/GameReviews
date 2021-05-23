@@ -31,6 +31,10 @@
         header("Location: signup.php?error=usernametaken"); 
         exit(); 
     }
+    if (pwdLength($userPassword) !== false){
+        header("Location: signup.php?error=passwordtooshort"); 
+        exit(); 
+    }
 
     createUser($conn, $userName, $userEmail, $userPassword, $userPasswordRepeat); 
 

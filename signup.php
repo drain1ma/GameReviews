@@ -22,11 +22,31 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
         <input type="password" name="user_pwdrepeat" placeholder="confirm password"> <br> 
         <button type="submit" name="submit" class="btn btn-primary">Sign Up</button> 
     </form> 
-    <?php 
-        $sql = "SELECT * FROM users;"; 
-        $result = mysqli_query($conn, $sql); 
-        $resultCheck = mysqli_num_rows($result); 
 
+    <?php 
+        if (isset($_GET["error"])){
+            if ($_GET["error"] == "emptyinput"){
+                echo "<p>Fill all the fields!</p>"; 
+            }
+            else if ($_GET["error"] == "invalidusername"){
+                echo "<p>Enter valid username!</p>"; 
+            }
+            else if ($_GET["error"] == "invalidemail"){
+                echo "<p>Enter valid email!</p>"; 
+            }
+            else if ($_GET["error"] == "passwordsdontmatch"){
+                echo "<p>Passwords do not match!</p>"; 
+            }
+           else if ($_GET["error"] == "passwordsdontmatch"){
+                echo "<p>Passwords do not match!</p>"; 
+            }
+            else if ($_GET["error"] == "passwordtooshort"){
+                echo "<p>Password is too short!</p>"; 
+            }
+            else if ($_GET["error"] == "none"){
+                echo "<p>You have signed up!</p>"; 
+            }
+        }
     ?>
 
 

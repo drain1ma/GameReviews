@@ -71,6 +71,17 @@ else{
 mysqli_stmt_close($stmt); 
 }
 
+function pwdLength($userPassword){
+    $result; 
+    if(strlen($userPassword) < 8){
+        $result = true; 
+    }
+    else{
+        $result = false; 
+        return $result; 
+    }
+}
+
 function createUser($conn, $userName, $userEmail, $userPassword, $userPasswordRepeat){
 
 $sql = "INSERT INTO users (user_name, user_email, user_pwd) 
@@ -89,5 +100,41 @@ mysqli_stmt_close($stmt);
 header("Location: signup.php?error=none"); 
 exit();
 
+}
+
+function emptyInputLogin($userName, $pwd){
+    $result; 
+
+if (empty($userName) || empty($pwd)){
+    $result = true; 
+}
+else {
+    $result = false; 
+}
+return $result; 
+}
+
+function loginUser($conn, $userName, $userPassword){
+    $userNameExists = uidExists($conn, $userName, $userEmail); 
+
+    if ($userNameExists === false){
+        header("Location: login.php?error=wronglogin"); 
+        exit(); 
+    }
+
+    $pwdHashed = $userNameExists["user_pwd"]; 
+    $checkPwd = password_verify($pwd, $pwdHashed); 
+
+    if ($checkPwd === false){
+        header("Location: login.php?error=wronglogin"); 
+        exit(); 
+    }
+    else if ($checkPwd === true){
+        session_start(); 
+        $_SESSION["userid"] = $userNameExists["user_id"]; 
+        $_SESSION["username"] = $userNameExists["user_name"]; 
+        header("Location: index.php"); 
+        exit(); 
+    }
 }
 ?> 
