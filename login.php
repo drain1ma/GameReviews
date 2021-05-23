@@ -21,7 +21,7 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
     <form action="login.inc.php" method="POST"> 
         <input type="text" name="user_name" placeholder="username/email"> <br> 
         <input type="password" name="user_pwd" placeholder="password"> <br> 
-        <button type="submit" name="login" class="btn btn-primary">Login</button> 
+        <button type="submit" name="submit" class="btn btn-primary">Login</button> 
     </form> 
 
 <?php 

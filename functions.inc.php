@@ -115,7 +115,7 @@ return $result;
 }
 
 function loginUser($conn, $userName, $userPassword){
-    $userNameExists = uidExists($conn, $userName, $userEmail); 
+    $userNameExists = uidExists($conn, $userName, $userName); 
 
     if ($userNameExists === false){
         header("Location: login.php?error=wronglogin"); 
@@ -123,7 +123,7 @@ function loginUser($conn, $userName, $userPassword){
     }
 
     $pwdHashed = $userNameExists["user_pwd"]; 
-    $checkPwd = password_verify($pwd, $pwdHashed); 
+    $checkPwd = password_verify($userPassword, $pwdHashed); 
 
     if ($checkPwd === false){
         header("Location: login.php?error=wronglogin"); 
