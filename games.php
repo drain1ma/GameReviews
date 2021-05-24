@@ -7,8 +7,11 @@
 <body>
     <?php 
         include 'templates/header.php'; 
+        include 'templates/footer.php'; 
     ?> 
-This is the games page 
+    <div>
+        This is the games page 
+    </div> 
 
 </body> 
 </html> 
