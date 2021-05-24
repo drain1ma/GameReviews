@@ -16,6 +16,8 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
    
    <?php 
     session_start(); 
+    include 'templates/header.php'; 
+    include 'templates/footer.php'; 
    ?> 
 
     <form action="login.inc.php" method="POST"> 

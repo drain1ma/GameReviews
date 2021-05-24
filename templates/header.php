@@ -13,20 +13,30 @@
 
 <body> 
 <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="text-align: right">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-5" style="background-color: #999999">
             <div class="container">
-                    <img src="img/gameinformerlogo.png" class="logo"/>
+    
                 
-                <a style="background-image: url('img/gameinformer.png')"></a>
+                <div class="logo" href="index.php"></div>
+
                 <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
                             <a class="nav-link" href="index.php"> Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="games.php"> Games</a>
                         </li>
                         
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="signup.php">Register</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php">Login</a>
+                            </li>
                     </ul>
                 </div>
             </div>

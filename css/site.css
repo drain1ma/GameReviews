@@ -130,6 +130,6 @@ body {
 }
 
 .logo{
-    height: 50px; 
-    width: auto; 
+    display: inline-block;
+    background: #00A7E1 url(/img/gameinformerlogo.png) left center/200px 1400px no-repeat !important;
 }
