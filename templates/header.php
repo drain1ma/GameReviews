@@ -1,3 +1,6 @@
+<?php 
+    session_start(); 
+?> 
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -30,13 +33,16 @@
                         
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="signup.php">Register</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.php">Login</a>
-                            </li>
+                            <?php 
+                                if (isset($_SESSION["username"])){
+                                    echo "<li class='nav-item'><a class='nav-link' href='profile.php'>Profile</a></li>";  
+                                    echo "<li class='nav-item'><a class='nav-link' href='logout.inc.php'>Logout</a></li>";  
+                                }
+                                else{
+                                    echo "<li class='nav-item'><a class='nav-link' href='signup.php'>Register</a></li>";  
+                                    echo "<li class='nav-item'><a class='nav-link' href='login.php'>Login</a></li>";  
+                                }
+                            ?> 
                     </ul>
                 </div>
             </div>
