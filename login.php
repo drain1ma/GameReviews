@@ -46,13 +46,13 @@
 <?php 
         if (isset($_GET["error"])){
             if ($_GET["error"] == "emptyinput"){
-                echo "<p>Fill all the fields!</p>"; 
+                echo "<p class='error'>Fill all the fields!</p>"; 
             }
             else if ($_GET["error"] == "wronglogin"){
-                echo "<p>Incorrect login!</p>"; 
+                echo "<p class='error'>Incorrect login!</p>"; 
             }
             else if ($_GET["error"] == "none"){
-                echo "<p>You have logged in!</p>"; 
+                echo "<p class='error'>You have logged in!</p>"; 
             }
         }
     ?>

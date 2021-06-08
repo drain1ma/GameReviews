@@ -20,16 +20,32 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
 
 <div class="container body-content">
 
-    
-    <form action="signup.inc.php" method="POST"> 
-        <input type="text" name="user_name" placeholder="username"> <br> 
-        <input type="text" name="user_email" placeholder="email"> <br> 
-        <input type="password" name="user_pwd" placeholder="password"> <br> 
-        <input type="password" name="user_pwdrepeat" placeholder="confirm password"> <br> 
-        <button type="submit" name="submit" class="btn btn-primary">Sign Up</button> 
-    </form> 
-
-    <?php 
+    <div class="row sectionHeader">
+        <div class="sectionHeading">
+            <h1>Register</h1>
+        </div>
+    </div>
+    <div class="row register">
+        <div class="col-md-12">
+            <form action="signup.inc.php" method="POST"> 
+                <div class="form-group">
+                    <label>Username</label></br>
+                    <input class="form-control" type="text" name="user_name" placeholder="username"> 
+                </div> 
+                <div class="form-group">
+                    <label>Email</label></br>
+                    <input class="form-control" type="text" name="user_email" placeholder="email"> 
+                </div> 
+                
+                <div class="form-group">
+                    <label>Password</label><br>
+                    <input class="form-control" type="password" name="user_pwd" placeholder="password"> 
+                </div> 
+                <div class="form-group">
+                    <label>Confirm Password</label></br>
+                    <input class="form-control" type="text" name="user_pwdrepeat" placeholder="confirm password"> 
+                </div> 
+                <?php 
         if (isset($_GET["error"])){
             if ($_GET["error"] == "emptyinput"){
                 echo "<p class='error'>Fill all the fields!</p>"; 
@@ -54,8 +70,14 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
             }
         }
     ?>
+                <button type="submit" name="submit" class="btn btn-primary">Sign Up</button> 
+               
 
+            </form> 
+
+        </div>
     </div>
+</div>
 </body> 
 
 <?php include 'templates/footer.php'?> 
