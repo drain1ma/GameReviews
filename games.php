@@ -10,7 +10,14 @@
         include 'templates/footer.php'; 
     ?> 
     <div>
-        This is the games page 
+    game page
+        <?php 
+        
+         if (isset($_SESSION["username"])){
+            echo "<p>user is logged in (games page)</p>";  
+        }
+        ?> 
+
     </div> 
 
 </body> 

@@ -111,7 +111,6 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background-image: url(../images/Ra9b34e28bcaac3c6c79fa8782fce737c.jfif);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -132,4 +131,27 @@ body {
 .logo{
     display: inline-block;
     background: #00A7E1 url(/img/gameinformerlogo.png) left center/200px 1400px no-repeat !important;
+}
+
+.register{
+  display: block; 
+  background-color: lightblue; 
+  padding: 15px; 
+}
+
+.sectionHeader{
+  display: block; 
+  background-color: #444; 
+  text-align: center; 
+  padding: 15px; 
+}
+
+.sectionHeading{
+    display: block; 
+    color: #000;
+    padding: 3px; 
+}
+
+.error{
+  color: red; 
 }

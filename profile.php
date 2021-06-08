@@ -9,6 +9,11 @@
 ?>
 
 <body> 
-    <p>This is the profile page</p> 
+    <?php 
+       if (isset($_SESSION["username"])){
+        echo "<p>user is logged in</p>";  
+    }
+    
+    ?> 
 </body> 
 </html> 

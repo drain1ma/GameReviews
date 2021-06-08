@@ -18,6 +18,9 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
     include 'templates/footer.php'; 
 ?>
 
+<div class="container body-content">
+
+    
     <form action="signup.inc.php" method="POST"> 
         <input type="text" name="user_name" placeholder="username"> <br> 
         <input type="text" name="user_email" placeholder="email"> <br> 
@@ -29,30 +32,30 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
     <?php 
         if (isset($_GET["error"])){
             if ($_GET["error"] == "emptyinput"){
-                echo "<p>Fill all the fields!</p>"; 
+                echo "<p class='error'>Fill all the fields!</p>"; 
             }
             else if ($_GET["error"] == "invalidusername"){
-                echo "<p>Enter valid username!</p>"; 
+                echo "<p class='error'>Enter valid username!</p>"; 
             }
             else if ($_GET["error"] == "invalidemail"){
-                echo "<p>Enter valid email!</p>"; 
+                echo "<p class='error'>Enter valid email!</p>"; 
             }
             else if ($_GET["error"] == "passwordsdontmatch"){
-                echo "<p>Passwords do not match!</p>"; 
+                echo "<p class='error'>Passwords do not match!</p>"; 
             }
            else if ($_GET["error"] == "passwordsdontmatch"){
-                echo "<p>Passwords do not match!</p>"; 
+                echo "<p class='error'>Passwords do not match!</p>"; 
             }
             else if ($_GET["error"] == "passwordtooshort"){
-                echo "<p>Password is too short!</p>"; 
+                echo "<p class='error'>Password is too short!</p>"; 
             }
             else if ($_GET["error"] == "none"){
-                echo "<p>You have signed up!</p>"; 
+                echo "<p class='error'>You have signed up!</p>"; 
             }
         }
     ?>
 
-
+    </div>
 </body> 
 
 <?php include 'templates/footer.php'?> 
