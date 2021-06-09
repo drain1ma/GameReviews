@@ -29,12 +29,12 @@
         <div class="col-md-12">
             <form action="login.inc.php" method="POST"> 
                 <div class="form-group">
-                    <label>Username/Email</label></br>
-                    <input class="form-control" type="text" name="user_name" placeholder="username/email"> <br> 
+                    <label>Username/Email</label>
+                    <input class="form-control" type="text" name="user_name" placeholder="username/email">
                 </div> 
                 <div class="form-group">
-                    <label>Password</label><br>
-                    <input class="form-control" type="password" name="user_pwd" placeholder="password"> <br> 
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="user_pwd" placeholder="password">
                 </div> 
                 <button type="submit" name="submit" class="btn btn-primary">Login</button> 
             </form> 
