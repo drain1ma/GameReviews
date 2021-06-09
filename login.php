@@ -36,6 +36,19 @@
                     <label>Password</label>
                     <input class="form-control" type="password" name="user_pwd" placeholder="password">
                 </div> 
+                <?php 
+                    if (isset($_GET["error"])){
+                        if ($_GET["error"] == "emptyinput"){
+                            echo "<p class='error'>Fill all the fields!</p>"; 
+                        }
+                        else if ($_GET["error"] == "wronglogin"){
+                            echo "<p class='error'>Incorrect login!</p>"; 
+                        }
+                        else if ($_GET["error"] == "none"){
+                            echo "<p class='error'>You have logged in!</p>"; 
+                        }
+                    }           
+                ?>
                 <button type="submit" name="submit" class="btn btn-primary">Login</button> 
             </form> 
         </div>
@@ -43,19 +56,7 @@
 </div>
 
 
-<?php 
-        if (isset($_GET["error"])){
-            if ($_GET["error"] == "emptyinput"){
-                echo "<p class='error'>Fill all the fields!</p>"; 
-            }
-            else if ($_GET["error"] == "wronglogin"){
-                echo "<p class='error'>Incorrect login!</p>"; 
-            }
-            else if ($_GET["error"] == "none"){
-                echo "<p class='error'>You have logged in!</p>"; 
-            }
-        }
-    ?>
+
 
 </body> 
 
