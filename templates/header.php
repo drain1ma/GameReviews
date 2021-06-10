@@ -25,22 +25,25 @@
                 <div class="navbar-collapse collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                            <a class="list-item nav-link" href="index.php"> Home</a>
+                            <a class="list-item nav-link" href="index.php"> Home
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="list-item nav-link" href="games.php"> Games</a>
+                            <a class="list-item nav-link" href="games.php"> Games
+                            </a>
+                            
                         </li>
                         
                     </ul>
                     <ul class="navbar-nav ml-auto">
                             <?php 
                                 if (isset($_SESSION["username"])){
-                                    echo "<li class='nav-item'><a class='nav-link' href='profile.php'>Profile</a></li>";  
-                                    echo "<li class='nav-item'><a class='nav-link' href='logout.inc.php'>Logout</a></li>";  
+                                    echo "<li class='nav-item'><a class='list-item nav-link' href='profile.php'>Profile</a></li>";  
+                                    echo "<li class='nav-item'><a class='list-item nav-link' href='logout.inc.php'>Logout</a></li>";  
                                 }
                                 else{
-                                    echo "<li class='nav-item'><a class='nav-link' href='signup.php'>Register</a></li>";  
-                                    echo "<li class='nav-item'><a class='nav-link' href='login.php'>Login</a></li>";  
+                                    echo "<li class='nav-item'><a class='list-item nav-link' href='signup.php'>Register</a></li>";  
+                                    echo "<li class='nav-item'><a class='list-item nav-link' href='login.php'>Login</a></li>";  
                                 }
                             ?> 
                     </ul>
