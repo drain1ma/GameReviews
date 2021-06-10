@@ -1,3 +1,3 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "", "imgupload"); 
+    $conn = mysqli_connect("localhost", "root", "", "gamereviews"); 
 ?> 
