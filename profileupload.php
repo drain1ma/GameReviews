@@ -4,7 +4,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_assoc($result)){
         $userid = $row['id']; 
-        $sql = "INSERT INTO profileimg (user_id, status) VALUES ('userid', 1)"; 
+        $sql = "INSERT INTO profileimg (user_id, status) VALUES ('user_id', 1)"; 
         mysqli_query($conn, $sql);
     }
 }
