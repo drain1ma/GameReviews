@@ -1,3 +1,4 @@
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -16,8 +17,22 @@
         if (mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $id = $row['user_id']; 
-                $sqlImg = "SELECT * FROM profileimg WHERE user_id =$id";
+                $sqlImg = "SELECT * FROM profileimg WHERE user_id=$id";
                 $resultImg = mysqli_query($conn, $sqlImg); 
+                if ($resultImg == null){
+                    $sql = "SELECT * FROM users WHERE user_id='$id'";
+                    $result = mysqli_query($conn, $sql); 
+                    if (mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            $userid = $row['user_id']; 
+                            $sql = "INSERT INTO profileimg (user_id, status) VALUES ('userid', 1)"; 
+                            mysqli_query($conn, $sql);
+                        }
+                    }   
+                    else {
+                        echo "You have an error!"; 
+                    }
+                }
                 while($rowImg = mysqli_fetch_assoc($resultImg)){
                     echo "<div>"; 
                     if($rowImg['status'] == 0){
