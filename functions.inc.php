@@ -87,21 +87,34 @@ function createUser($conn, $userName, $userEmail, $userPassword, $userPasswordRe
 $sql = "INSERT INTO users (user_name, user_email, user_pwd) 
 VALUES (?, ?, ?);"; 
 $stmt = mysqli_stmt_init($conn); 
-
-
 if (!mysqli_stmt_prepare($stmt, $sql)){
     header("Location: signup.php?error=stmtfailed"); 
     exit(); 
 }
-
 $hashedPwd = password_hash($userPassword, PASSWORD_DEFAULT); 
 
 mysqli_stmt_bind_param($stmt, "sss", $userName, $userEmail, $hashedPwd); 
 mysqli_stmt_execute($stmt); 
 mysqli_stmt_close($stmt); 
-header("Location: signup.php?error=none"); 
+addProfilePictureStatus($conn, $userName, $userEmail);
+header("Location: index.php?error=none"); 
 exit();
 
+}
+
+function addProfilePictureStatus($conn, $userName, $userEmail){
+    $sql = "SELECT * FROM users WHERE user_name='$userName' AND user_email='$userEmail'";
+                    $result = mysqli_query($conn, $sql); 
+                    if (mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            $userid = $row['user_id']; 
+                            $sql = "INSERT INTO profileimg (user_id, status) VALUES ('$userid', 1)"; 
+                            mysqli_query($conn, $sql);
+                        }
+                    }   
+                    else {
+                        echo "You have an error!"; 
+                    }
 }
 
 function emptyInputLogin($userName, $pwd){

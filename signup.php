@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html> 
 <html> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
@@ -43,7 +46,7 @@ integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ
                 </div> 
                 <div class="form-group">
                     <label>Confirm Password</label></br>
-                    <input class="form-control" type="text" name="user_pwdrepeat" placeholder="confirm password"> 
+                    <input class="form-control" type="password" name="user_pwdrepeat" placeholder="confirm password"> 
                 </div> 
                 <?php 
         if (isset($_GET["error"])){

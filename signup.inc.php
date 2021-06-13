@@ -35,7 +35,8 @@
         }
     
         createUser($conn, $userName, $userEmail, $userPassword, $userPasswordRepeat); 
-        
+
+
         header("Location: index.php?signup=success"); 
     }
   
