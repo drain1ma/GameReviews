@@ -14,28 +14,18 @@
         $fileExt = explode('.', $fileName); 
         $fileActualExt = strtolower(end($fileExt)); 
 
-        $allowed = array('jpg', 'jpeg', 'png'); 
+        $allowed = array('jpg', 'jpeg', 'png', 'gif'); 
 
         if (in_array($fileActualExt, $allowed)){
             if ($fileError === 0){
-                if ($fileSize < 500000){
+                if ($fileSize < 10000000){
                     $fileNameNew = "profile".$id.".".$fileActualExt; 
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
                     $sql = "UPDATE profileimg SET status=0 WHERE user_id='$id'"; 
                     $result = mysqli_query($conn, $sql); 
-                    $sql2 = "SELECT * FROM users WHERE user_name='$userName'";
-                    $result2 = mysqli_query($conn, $sql2); 
-                    if (mysqli_num_rows($result2) > 0){
-                        while($row = mysqli_fetch_assoc($result2)){
-                            $userid = $row['id']; 
-                            $sql = "INSERT INTO profileimg (user_id, status) VALUES ('user_id', 1)"; 
-                            mysqli_query($conn, $sql);
-                        }
-                    }   
-                    else {
-                        echo "You have an error!"; 
-                    }
+                    
+                   
                     header("Location: profile.php?uploadsuccess");
                 }
                 else {
