@@ -174,3 +174,15 @@ body {
   
 }
 
+
+#image{
+  display: inline-block; 
+  width: 200px; 
+  height: 200px; 
+}
+
+.user-container{
+  display: block; 
+  padding: 15px; 
+  background-color: gray; 
+}

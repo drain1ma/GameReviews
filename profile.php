@@ -68,28 +68,23 @@
                 $valueStr = $value[0]; 
                 
                 while($rowImg = mysqli_fetch_assoc($resultImg)){
-                    echo "<div>"; 
+                    echo "<div class='container body-content user-container'>"; 
                     if($rowImg['status'] == 0){
-                        $picture = $_POST['file']; 
-                        echo "<img src='$picture'>"; 
+                        $picture = $rowImg['image_path']; 
+                        echo "<img id='image' src='uploads/$picture'>"; 
                     }
                     else{
-                        echo "<img src='uploads/profiledefault.png'>"; 
+                        echo "<img id='image' src='uploads/profiledefault.png'>"; 
                     }
-                    echo $row['user_name']; 
+                    echo "<p>".$row['user_name']."</p>" ; 
+                    echo "<form action='profile.php' method='POST' enctype='multipart/form-data'>
+                    <input type='file' name='file'>
+                    <button type='submit' name='submit' style='padding: 5px'>Upload</button>
+                </form>"; 
                     echo "</div>"; 
                 } 
             }
         } 
     ?> 
-
-
-<form action="profile.php" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file">
-    <button type="submit" name="submit" style="padding: 5px">Upload</button>
-</form> 
-
-
-
 </body> 
 </html> 
