@@ -29,10 +29,13 @@
      if (in_array($fileActualExt, $allowed)){
          if ($fileError === 0){
              if ($fileSize < 10000000){
-                 $fileNameNew = "profile".$id.".".$fileActualExt; 
+                 $fileNameNew =  'profile'.$id.'.'.$fileActualExt; 
                  $fileDestination = 'uploads/'.$fileNameNew;
                  move_uploaded_file($fileTmpName, $fileDestination);
-                 $sql = "UPDATE profileimg SET status=0 WHERE user_id='$id'"; 
+                 $sql = "UPDATE profileimg SET status=0, image_path=? WHERE user_id='$id'"; 
+                 $stmt= $conn->prepare($sql);
+                 $stmt->bind_param("s", $fileNameNew);
+                 $stmt->execute();
                  $result = mysqli_query($conn, $sql); 
                  
                 
@@ -51,19 +54,24 @@
      }
  }
 
- echo $id; 
  
-        $sql = "SELECT * FROM users"; 
+        $sql = "SELECT * FROM users WHERE user_id='$id'"; 
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $id = $row['user_id']; 
                 $sqlImg = "SELECT * FROM profileimg WHERE user_id='$id'";
+                $profilePicture = "SELECT image_path FROM profileimg WHERE user_id='$id'";
                 $resultImg = mysqli_query($conn, $sqlImg); 
+                $resultPfp = mysqli_query($conn, $profilePicture); 
+                $value = mysqli_fetch_row($resultPfp); 
+                $valueStr = $value[0]; 
+                
                 while($rowImg = mysqli_fetch_assoc($resultImg)){
                     echo "<div>"; 
                     if($rowImg['status'] == 0){
-                        echo "<img src='uploads/profile".$id.".jpg'>"; 
+                        $picture = $_POST['file']; 
+                        echo "<img src='$picture'>"; 
                     }
                     else{
                         echo "<img src='uploads/profiledefault.png'>"; 

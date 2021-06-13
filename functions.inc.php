@@ -108,7 +108,7 @@ function addProfilePictureStatus($conn, $userName, $userEmail){
                     if (mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
                             $userid = $row['user_id']; 
-                            $sql = "INSERT INTO profileimg (user_id, status) VALUES ('$userid', 1)"; 
+                            $sql = "INSERT INTO profileimg (user_id, status, image_path) VALUES ('$userid', 1, ' ')"; 
                             mysqli_query($conn, $sql);
                         }
                     }   
