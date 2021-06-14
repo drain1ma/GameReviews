@@ -111,6 +111,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    background-image: url(https://cdn.hipwallpaper.com/i/34/13/5Kb6dg.jpg); 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -184,5 +185,5 @@ body {
 .user-container{
   display: block; 
   padding: 15px; 
-  background-color: gray; 
+  background-color: white; 
 }
