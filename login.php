@@ -20,8 +20,8 @@
    ?> 
 <div class="container body-content">
 
-    <div class="row sectionHeader">
-        <div class="sectionHeading">
+    <div class="row registerHeader">
+        <div class="registerHeading">
             <h1>Login</h1>
         </div>
     </div>

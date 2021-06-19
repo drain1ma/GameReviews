@@ -135,16 +135,33 @@ body {
 }
 
 .register{
-  display: block; 
-  background-color: lightblue; 
+  display: flex; 
+  background-color: white; 
   padding: 15px; 
+  width: 50%; 
+  margin: 0 auto; 
 }
 
+.registerHeader{
+  display: flex; 
+  background-color: lightblue; 
+  padding: 15px; 
+  width: 50%; 
+  text-align: center;
+  margin: 0 auto;
+}
+
+.registerHeading{
+  display: flex; 
+  color: #000;
+  padding: 3px; 
+  width: 50%;
+  margin: 0 auto;
+}
 .sectionHeader{
   display: block; 
-  background-color: #444; 
+  background-color: lightblue; 
   text-align: center; 
-  padding: 15px; 
 }
 
 .sectionHeading{
@@ -185,5 +202,5 @@ body {
 .user-container{
   display: block; 
   padding: 15px; 
-  background-color: lightblue; 
+  background-color: white; 
 }
