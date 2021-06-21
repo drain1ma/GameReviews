@@ -20,9 +20,10 @@
    ?> 
 <div class="container body-content">
 
+
     <div class="row registerHeader">
-        <div class="registerHeading">
-            <h1>Login</h1>
+        <div class="registerHeading" >
+            <img src="uploads/profiledefault.png" class="defaultpfp"> 
         </div>
     </div>
     <div class="row register">

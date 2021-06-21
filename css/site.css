@@ -134,6 +134,14 @@ body {
     background: #00A7E1 url(/img/gameinformerlogo.png) left center/200px 1400px no-repeat !important;
 }
 
+.defaultpfp{
+  display: inline-block;
+  height: 100px; 
+  width: 100px; 
+  border-radius: 50%; 
+  margin-left: auto;
+  margin-right: auto;
+}
 .register{
   display: flex; 
   background-color: white; 
@@ -144,24 +152,25 @@ body {
 
 .registerHeader{
   display: flex; 
-  background-color: lightblue; 
-  padding: 15px; 
+  background-color: darkred; 
   width: 50%; 
   text-align: center;
   margin: 0 auto;
 }
 
 .registerHeading{
-  display: flex; 
-  color: #000;
+  display: block; 
+  color: darkred;
   padding: 3px; 
   width: 50%;
-  margin: 0 auto;
+
 }
 .sectionHeader{
-  display: block; 
-  background-color: lightblue; 
+  display: flex; 
+  background-color: darkred; 
+  padding: -10px; 
   text-align: center; 
+  margin: 0 auto; 
 }
 
 .sectionHeading{
