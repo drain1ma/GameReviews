@@ -74,13 +74,14 @@
                         echo "<img id='image' src='uploads/$picture'>"; 
                     }
                     else{
-                        echo "<img id='image' src='uploads/profiledefault.png'>"; 
+                        echo "<img id='image' src='/uploads/profiledefault.png'>"; 
                     }
+                    echo "<a type='link' href='editprofile.php' class='editProfile'>Edit Profile</a>"; 
                     echo "<p>".$row['user_name']."</p>" ; 
                     echo "<form action='profile.php' method='POST' enctype='multipart/form-data'>
                     <input type='file' name='file'>
                     <button type='submit' name='submit' style='padding: 5px'>Upload</button>
-                </form>"; 
+                    </form>"; 
                     echo "</div>"; 
                 } 
             }
